@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Title</title>
+	<meta name="description" content="Создание адаптивного сайта" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/bootstrap/bootstrap-grid-3.3.1.min.css" />
+  	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="css/font/font.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/media.css" />
+</head>
+<body>
+<div class="wrapper">
+	<main class="content">
+		<div class="container">
+			<div class="row">
+				<div class="form">
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="pl br">	
+							<div class="title">Место или название отеля</div>
+							<img src="img/map.png" alt=""><input type="text" placeholder="Введите здесь место" name="hotel">
+						</div>
+					</div>		
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="br">	
+							<div class="leftdate">
+								<div class="title">Заезд</div>
+								<img src="img/calendar.png" alt=""><input type="text" class="form-control" id="datepicker" name="date" placeholder="07 февраля">
+							</div>
+							<div class="rightdate">
+								<div class="title">Выезд</div>
+								<input type="text" class="form-control" id="datepicker1" name="date" placeholder="07 февраля">
+							</div>
+						</div>
+					</div>				
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="">
+							<span class="raz">
+							  <div class="title">Номера</div>
+							  <input type="number" value="0">
+							  <span onclick="this.previousElementSibling.stepUp()"></span>
+							  <span onclick="this.previousElementSibling.previousElementSibling.stepDown()"></span>
+							</span>
+							<span class="raz">
+							  <div class="title">Взрослые</div>
+							  <input type="number" value="0">
+							  <span onclick="this.previousElementSibling.stepUp()"></span>
+							  <span onclick="this.previousElementSibling.previousElementSibling.stepDown()"></span>
+							</span>
+							<span class="raz">
+							  <div class="title">Дети</div>
+							  <input type="number" value="0">
+							  <span onclick="this.previousElementSibling.stepUp()"></span>
+							  <span onclick="this.previousElementSibling.previousElementSibling.stepDown()"></span>
+							</span>
+							<button>Найти</button>
+						</div>
+					</div>		
+				</div>	
+			</div>
+		</div>
+	</main><!-- .content -->
+</div><!-- .wrapper -->
+<!--[if lt IE 9]>
+	<script src="js/lib/html5shiv/es5-shim.min.js"></script>
+	<script src="js/lib/html5shiv/html5shiv.min.js"></script>
+	<script src="js/lib/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="js/lib/respond/respond.min.js"></script>
+	<![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="js/script.js"></script>	<script>
+/* Локализация datepicker */
+$.datepicker.regional['ru'] = {
+	closeText: 'Закрыть',
+	prevText: 'Предыдущий',
+	nextText: 'Следующий',
+	currentText: 'Сегодня',
+	monthNames: ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
+	monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+	dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+	dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+	dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+	weekHeader: 'Не',
+	dateFormat: 'd MM',
+	firstDay: 1,
+	isRTL: false,
+	showMonthAfterYear: false,
+	yearSuffix: ''
+};
+$.datepicker.setDefaults($.datepicker.regional['ru']);
+</script>
+<script>
+$(function(){
+	$("#datepicker").datepicker();
+});
+$(function(){
+	$("#datepicker1").datepicker();
+});
+</script>
+</body>
+</html>
